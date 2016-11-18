@@ -1,0 +1,25 @@
+{
+  "name": "currency-bot",
+  "version": "1.0.0",
+  "description": "currency bot.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "node index.js",
+    "tryBot": "node tryBot.js",
+    "prod": "node sendMessage.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mvpdw06/currency-bot.git"
+  },
+  "author": "Ryan Hsu",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/mvpdw06/currency-bot/issues"
+  },
+  "dependencies": {
+    "cheerio": "^0.20.0",
+    "node-telegram-bot-api": "^0.24.0",
+    "request": "^2.74.0"
+  }
+}
