@@ -6,7 +6,7 @@
   "scripts": {
     "dev": "node index.js",
     "tryBot": "node tryBot.js",
-    "prod": "node sendMessage.js"
+    "star": "node sendMessage.js"
   },
   "repository": {
     "type": "git",
