@@ -1,1 +1,1 @@
-web: node testEvn.js
+web: node testTelegramBot.js
