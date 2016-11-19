@@ -1,1 +1,1 @@
-web: node tryBot.js
+web: node index.js
