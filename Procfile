@@ -1,1 +1,1 @@
-web: node testTelegramBot.js
+worker: node testTelegramBot.js
