@@ -4,11 +4,10 @@ var token = process.env.token;
 
 console.log('token', token);
 
-var port = process.env.PORT || 8080;
+var port = process.env.PORT || 8443;
+var host = process.env.HOST;
 
-var io = require('socket.io').listen(app.listen(port));
-
-var bot = new TelegramBot(token, { polling: true });
+var bot = new TelegramBot(token, {webHook: {port: port, host: host});
 
 console.log('bot', bot);
 
