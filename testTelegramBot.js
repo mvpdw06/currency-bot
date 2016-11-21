@@ -9,6 +9,6 @@ var host = process.env.HOST;
 
 var bot = new TelegramBot(token, {webHook: {port: port, host: host}});
 
-console.log('bot', bot);
 
-bot.getMe();
+// send Message
+bot.sendMessage(process.env.channelID, 'Hello~');
