@@ -18,10 +18,14 @@ var webhook = {
 
 var bot = new TelegramBot(token, webhook);
 
-var interval = 3 * 3600 * 1000;
+console.log('new bot');
+
+// var interval = 3 * 3600 * 1000;
+var interval = 1000;
 
 setInterval(function(){
     getCurrency(function(err, currency){
+    	console.log(currency)
         bot.sendMessage(channelID, currency);
     });
 }, interval);
