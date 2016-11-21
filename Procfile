@@ -1,1 +1,1 @@
-web: node sendMessage.js 
+web: node testBot.js 
