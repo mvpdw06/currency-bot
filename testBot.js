@@ -20,6 +20,6 @@ var bot = new TelegramBot(token, webhook);
 console.log('new bot');
 
 // var interval = 3 * 3600 * 1000;
-bot.getme().then(function(response){
+bot.getMe().then(function(response){
 	console.log('res:', response);
 });
