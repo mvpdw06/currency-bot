@@ -33,11 +33,22 @@ Request plugin can let you send request to web pages, and we use cheerio to find
 
     > process.env.token
 
-10. Create Procfile file
+10. Integrate get-currency and Telegram-bot
+11. Set schedule to run your code.
+
+    ```
+    setInterval(function(){ 
+        // your code here. 
+        }, time);
+    ```
+
+12. Create Procfile file 
 
 This is a file to let Heroku know what command it should run.
 
-    > web: node index.js
+    ```
+    web: node index.js
+    ```
 
 ＊ web is a type of process, you should use web here.
 
@@ -49,7 +60,9 @@ This is a file to let Heroku know what command it should run.
 
 You can use Heroku-cli to command like "heroku ps:scale web=0".
 
-    > heroku ps:scale web=0
+    ```
+    heroku ps:scale web=0
+    ```
 
 If your process type is "worker", and you should command "heroku ps:scale worker=0".
 
@@ -57,9 +70,16 @@ If your process type is "worker", and you should command "heroku ps:scale worker
 
 Telegram bot **must** set webhook in new-bot, or your request will timeout.
 
-    > var port = process.env.PORT || 8443;
-    > var host = process.env.HOST;
-    > var bot = new TelegramBot(token, { webHook: { port: port, host: host }});
+    ```
+    var port = process.env.PORT || 8443;
+    var host = process.env.HOST;
+    var bot = new TelegramBot(token, { webHook: { port: port, host: host }});
+    ```
+
+3. Heroku Server will turn to sleep mode, when your code is do nothing.
+
+    > Solution: set another interval to keep server awake.
+
 
 ## References
 
