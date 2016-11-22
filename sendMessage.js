@@ -15,9 +15,6 @@ var webhook = {
 }
 
 var bot = new TelegramBot(token, webhook);
-getCurrency(function(err, currency){
-	console.log(currency);
-});
 
 console.log('app start!');
 
@@ -31,7 +28,7 @@ setInterval(function(){
 // bot send message every hours.
 setInterval(function(){
 	getCurrency(function(err, currency){
-		console.log('Keep server awake.', );
+		console.log('send Message:', currency);
 		bot.sendMessage(channelID, currency);
 	});
 }, 3600 * 1000);
