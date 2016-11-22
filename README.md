@@ -17,7 +17,7 @@ Base on Node.js
 
 1. Send request && get currency what we want
 
-Request plugin can let you send request to web pages, and we use cheerio to find HTML element what we want like jQuery. After get data we want, we export result like a module.
+    Request plugin can let you send request to web pages, and we use cheerio to find HTML element what we want like jQuery. After get data we want, we export result like a module.
 
 2. Create Telegram account
 3. Create your Telegram bot from [@BotFather](https://telegram.me/BotFather).
@@ -36,21 +36,21 @@ Request plugin can let you send request to web pages, and we use cheerio to find
 10. Integrate get-currency and Telegram-bot
 11. Set schedule to run your code.
 
-```
-setInterval(function(){ 
-    // your code here. 
-    }, time);
-```
+    ```
+    setInterval(function(){ 
+        // your code here. 
+        }, time);
+    ```
 
 12. Create Procfile file 
 
-This is a file to let Heroku know what command it should run.
+    This is a file to let Heroku know what command it should run.
 
-```
-web: node index.js
-```
+    ```
+    web: node index.js
+    ```
 
-＊ web is a type of process, you should use web here.
+    ＊ web is a type of process, you should use web here.
 
 11. Deploy your code to Heroku.
 
@@ -58,23 +58,23 @@ web: node index.js
 
 1. How to stop Heroku app?
 
-You can use Heroku-cli to command like "heroku ps:scale web=0".
+    You can use Heroku-cli to command like "heroku ps:scale web=0".
 
-```
-heroku ps:scale web=0
-```
+    ```
+    heroku ps:scale web=0
+    ```
 
-If your process type is "worker", and you should command "heroku ps:scale worker=0".
+    If your process type is "worker", and you should command "heroku ps:scale worker=0".
 
 2. Telegram bot request timeout.
 
-Telegram bot **must** set webhook in new-bot, or your request will timeout.
+    Telegram bot **must** set webhook in new-bot, or your request will timeout.
 
-```
-var port = process.env.PORT || 8443;
-var host = process.env.HOST;
-var bot = new TelegramBot(token, { webHook: { port: port, host: host }});
-```
+    ```
+    var port = process.env.PORT || 8443;
+    var host = process.env.HOST;
+    var bot = new TelegramBot(token, { webHook: { port: port, host: host }});
+    ```
 
 3. Heroku Server will turn to sleep mode, when your code is do nothing.
 
