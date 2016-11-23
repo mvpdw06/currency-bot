@@ -39,7 +39,7 @@ Base on Node.js
     ```
     setInterval(function(){ 
         // your code here. 
-        }, time);
+    }, period);
     ```
 
 12. Create Procfile file 
@@ -47,24 +47,31 @@ Base on Node.js
     This is a file to let Heroku know what command it should run.
 
     ```
-    web: node index.js
+    clock: node index.js
     ```
 
-    ＊ web is a type of process, you should use web here.
+    ＊ clock is a type of process. Because our process is a running on schedule process, so we should use clock.
 
 11. Deploy your code to Heroku.
 
 ## Problems I meet
 
-1. How to stop Heroku app?
+1. How to start or stop Heroku app?
 
-    You can use Heroku-cli to command like "heroku ps:scale web=0".
+    You can use Heroku-cli to command "heroku ps:scale clock=1 --app APP_Name" to start your app.
 
     ```
-    heroku ps:scale web=0
+    heroku ps:scale clock=1 --app APP_Name
     ```
 
-    If your process type is "worker", and you should command "heroku ps:scale worker=0".
+    So you can command "heroku ps:scale clock=0 --app APP_Name" to stop your app.
+
+    ```
+    heroku ps:scale clock=0 --app APP_Name
+    ```
+
+    If your process type is "worker", and you should command "heroku ps:scale worker=0 --app APP_Name".
+    Similarly, if your process type is "web", and you should command "heroku ps:scale web=0 --app APP_Name".
 
 2. Telegram bot request timeout.
 
@@ -78,7 +85,9 @@ Base on Node.js
 
 3. Heroku Server will turn to sleep mode, when your code is do nothing.
 
-    > Solution: set another interval to keep server awake.
+    > Solution: turn process type from web or worker to clock.
+
+    When your app receives no traffic in a 30 minute period, the your app will sleep.
 
 
 ## References
