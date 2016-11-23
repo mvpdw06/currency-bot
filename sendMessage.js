@@ -19,11 +19,11 @@ var bot = new TelegramBot(token, webhook);
 console.log('app start!');
 
 // keep your server awake. run every 5 minutes.
-setInterval(function(){
-	getCurrency(function(err, currency){
-		console.log('Keep server awake.', currency);
-	});
-}, 5 * 60 * 1000);
+// setInterval(function(){
+// 	getCurrency(function(err, currency){
+// 		console.log('Keep server awake.', currency);
+// 	});
+// }, 5 * 60 * 1000);
 
 // bot send message every hours.
 setInterval(function(){

@@ -1,1 +1,1 @@
-web: node sendMessage.js 
+clock: node sendMessage.js 
