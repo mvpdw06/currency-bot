@@ -1,5 +1,3 @@
-var getCurrency = require('./getCurrency');
+const getCurrency = require('./getCurrency');
 
-getCurrency(function(err, currency){
-    console.log(currency);
-});
+getCurrency((err, currency) => console.log(currency));

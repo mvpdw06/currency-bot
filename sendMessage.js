@@ -1,27 +1,31 @@
-var TelegramBot = require('node-telegram-bot-api');
-var getCurrency = require('./getCurrency');
+const TelegramBot = require('node-telegram-bot-api');
+const getCurrency = require('./getCurrency');
+const later = require('later');
 
-// get from Heroku config variable
-var token = process.env.token;
-var channelID = process.env.channelID;
-var port = process.env.PORT || 8443;
-var host = process.env.HOST;
+// get from Heroku config constiable
+const token = process.env.token;
+const channelID = process.env.channelID;
+const port = process.env.PORT || 8443;
+const host = process.env.HOST;
 
-var webhook = {
+const webhook = {
 	webHook: {
 		port: port,
 		host: host
 	}
 }
 
-var bot = new TelegramBot(token, webhook);
+const bot = new TelegramBot(token, webhook);
+later.date.timezone("Asia/Taipei");
+// const sched = later.parse.recur().on(8).hour();
+const sched = later.parse.recur().onWeekend().on(10).second();
 
 console.log('app start!');
 
 // bot send message every hours.
-setInterval(function(){
-	getCurrency(function(err, currency){
+const instance = later.setInterval(() => {
+	getCurrency((err, currency) => {
 		console.log('send Message:', currency);
-		bot.sendMessage(channelID, currency);
+		bot.sendMessage(channelID, '【測試中】' + currency);
 	});
-}, 3600 * 1000);
+}, sched);

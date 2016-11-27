@@ -1,11 +1,11 @@
-var TelegramBot = require('node-telegram-bot-api');
+const TelegramBot = require('node-telegram-bot-api');
 
-var token = process.env.token;
+const token = process.env.token;
 
-var port = process.env.PORT || 8443;
-var host = process.env.HOST;
+const port = process.env.PORT || 8443;
+const host = process.env.HOST;
 
-var bot = new TelegramBot(token, {webHook: {port: port, host: host}});
+const bot = new TelegramBot(token, {webHook: {port: port, host: host}});
 
 // send Message
 bot.sendMessage(process.env.channelID, 'Hello~');

@@ -4,9 +4,9 @@
   "description": "currency bot.",
   "main": "index.js",
   "scripts": {
-    "dev": "node index.js",
-    "tryBot": "node tryBot.js",
-    "star": "node sendMessage.js"
+    "dev": "node --harmony index.js",
+    "tryBot": "node --harmony tryBot.js",
+    "star": "node --harmony sendMessage.js"
   },
   "repository": {
     "type": "git",
@@ -19,6 +19,7 @@
   },
   "dependencies": {
     "cheerio": "^0.20.0",
+    "later": "^1.2.0",
     "node-telegram-bot-api": "^0.24.0",
     "request": "^2.74.0"
   }
