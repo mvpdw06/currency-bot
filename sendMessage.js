@@ -1,5 +1,5 @@
 const TelegramBot = require('node-telegram-bot-api');
-const getCurrency = require('./getCurrency');
+const getCurrency = require('./src/getCurrency');
 const later = require('later');
 
 // get from Heroku config constiable
