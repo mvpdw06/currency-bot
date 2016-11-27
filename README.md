@@ -12,6 +12,7 @@ Base on Node.js
 2. [cheerio](https://github.com/cheeriojs/cheerio)
 3. [node-telegram-bot-api](https://github.com/yagop/node-telegram-bot-api)
 4. [heroku-cli](https://github.com/heroku/cli) && settings
+5. [later.js](http://bunkat.github.io/later/index.html)
 
 ## Description
 
@@ -37,9 +38,11 @@ Base on Node.js
 11. Set schedule to run your code.
 
     ```
-    setInterval(function(){ 
-        // your code here. 
-    }, period);
+    const later = require('later');
+    const sched = later.parse.recur().onWeekday().on(9, 10, 11, 12, 13, 14, 15, 16, 17).hour();
+    later.setInterval(() => {
+        // your code here.
+    }, sched);
     ```
 
 12. Create Procfile file 

@@ -26,6 +26,6 @@ console.log('app start!');
 const instance = later.setInterval(() => {
 	getCurrency((err, currency) => {
 		console.log('send Message:', currency);
-		bot.sendMessage(channelID, '【測試中】' + currency);
+		bot.sendMessage(channelID, currency);
 	});
 }, sched);
