@@ -1,6 +1,6 @@
 # Telegram currency bot
 
-Try to create a Telegram bot to auto get current Japan currency and reply.
+Try to create a Telegram bot to auto get current Japan and Unite State currency and reply.
 
 ## Base
 
@@ -102,3 +102,9 @@ Base on Node.js
 
 * [Larry850806](https://github.com/Larry850806) inspire me to do this bot.
 * My friends [shiningjason1989](https://github.com/shiningjason1989)'s help!
+
+## 2016/12/08 update
+
+* Add Unite State currency get and reply.
+* Formate bot reply message beautyfully. 
+* Using JavaScript ES6 santax.
