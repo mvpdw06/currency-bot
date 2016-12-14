@@ -17,7 +17,7 @@ const webhook = {
 
 const bot = new TelegramBot(token, webhook);
 later.date.timezone("Asia/Taipei");
-const sched = later.parse.recur().on(0).minute().after(8).hour().before(18).hour().onWeekday();
+const sched = later.parse.recur().on(0).minute().after(9).hour().before(18).hour().onWeekday();
 
 console.log('app start!');
 
